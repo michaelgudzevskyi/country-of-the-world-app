@@ -6,17 +6,21 @@ export const CardContainer = styled.div`
   justify-content: end;
   align-items: center;
   background-color: #fff;
-
   cursor: pointer;
   width: 100%;
   max-width: calc(33.33% - 40px);
-  min-width: 230px;
+  min-width: 200px;
   border-radius: 5px;
   height: 68px;
   padding: 20px;
   margin: 20px;
   overflow: hidden;
-
+  @media only screen and (max-width: 762px) {
+    max-width: calc(50% - 40px);
+  }
+  @media only screen and (max-width: 490px) {
+    max-width: calc(100% - 40px);
+  }
   &:after {
     content: '»';
     position: absolute;

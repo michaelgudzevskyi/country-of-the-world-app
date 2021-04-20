@@ -1,4 +1,4 @@
-import { FC, ChangeEvent } from 'react'
+import { FC, ChangeEvent, useCallback } from 'react'
 import { RootStateOrAny, useDispatch, useSelector } from 'react-redux'
 import { Creators as CountryCreators } from '../../store/ducks/countries'
 import { Search } from '../../components'
@@ -9,11 +9,15 @@ import { Title } from './styles'
 export const HomeContainer: FC = () => {
   const { error } = useSelector((state: RootStateOrAny) => state.countries)
   const dispatch = useDispatch()
-  const { getCountryFilter } = CountryCreators
+  const { getCountryFilter, getCountryList } = CountryCreators
 
-  const handleField = (e: ChangeEvent<HTMLInputElement>) => {
-    dispatch(getCountryFilter(e.target.value))
-  }
+  const handleField = useCallback((e: ChangeEvent<HTMLInputElement>) => {
+    if (e.target.value) {
+      dispatch(getCountryFilter(e.target.value))
+    } else {
+      dispatch(getCountryList())
+    }
+  }, [])
 
   return (
     <>

@@ -1,8 +1,8 @@
+import { FC } from 'react'
 import { Route, BrowserRouter, Switch } from 'react-router-dom'
 import { HomeContainer } from '../containers'
-// import { Home } from '../pages'
 
-function Routes() {
+const Routes: FC = () => {
   return (
     <BrowserRouter>
       <Switch>

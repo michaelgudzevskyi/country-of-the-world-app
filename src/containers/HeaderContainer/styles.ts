@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const Header = styled.header`
   height: 160px;
   border-radius: 0 0 100px 100px;
+  padding: 0 40px;
   background-color: var(--accent);
   display: flex;
   justify-content: center;

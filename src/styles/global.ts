@@ -17,6 +17,7 @@ export default createGlobalStyle`
     --white: #FFFFFF;
     --main: #173c5c;
     --accent: #8257e6;
+    --red: red;
   }
 
   body, input, button {
@@ -47,5 +48,6 @@ export default createGlobalStyle`
     width: auto;
     padding: 0;
     border: none;
+    border-radius: 5px;
  }
 `

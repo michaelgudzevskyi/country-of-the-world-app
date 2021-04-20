@@ -5,6 +5,11 @@ export const PopupWrapper = styled.div`
   padding: 15px 25px 25px;
   min-width: 600px;
   max-width: 600px;
+
+  @media only screen and (max-width: 674px) {
+    min-width: auto;
+    width: 100%;
+  }
 `
 export const PopupHeader = styled.div`
   position: relative;
@@ -15,11 +20,12 @@ export const PopupHeader = styled.div`
   height: 40px;
   font-size: 20px;
   line-height: 21px;
+  border-bottom: 1px solid #dadada;
 `
 
 export const PopupTitle = styled.span`
   color: var(--main);
-  font-size: 16px;
+  font-size: 20px;
   text-transform: capitalize;
   font-weight: 900;
 `
@@ -41,7 +47,7 @@ export const PopupClose = styled.span`
     position: absolute;
     width: 2px;
     height: 16px;
-    background-color: var(--accent);
+    background-color: var(--main);
   }
 
   &:before {

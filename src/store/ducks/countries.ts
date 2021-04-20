@@ -11,6 +11,7 @@ export const Types = {
 const initialState = {
   countryList: false,
   error: false,
+  loading: false,
 }
 
 export default function reducer(
@@ -23,15 +24,22 @@ export default function reducer(
         ...state,
         countryList: action.payload,
       }
+    case Types.LOADING_UI:
+      return {
+        ...state,
+        loading: true,
+      }
     case Types.SET_ERRORS:
       return {
         ...state,
         error: action.payload,
+        loading: false,
       }
     case Types.CLEAR_ERRORS:
       return {
         ...state,
         error: action.payload,
+        loading: false,
       }
     default:
       return state
@@ -73,6 +81,10 @@ export const Creators = {
           dispatch({
             type: Types.SET_ERRORS,
             payload: 'Country not found.',
+          })
+          dispatch({
+            type: Types.SET_COUNTRY_LIST,
+            payload: null,
           })
         }
       })
