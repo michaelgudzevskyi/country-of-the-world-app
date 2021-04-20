@@ -21,7 +21,7 @@ export const Home: FC = () => {
 
   return (
     <Container>
-      <Title>Choose Country</Title>
+      <Title>Click to see country details</Title>
       <CardsWrapper>
         {countryList.map((country: CountryList) => (
           <CountryCard key={country.name} item={country} />

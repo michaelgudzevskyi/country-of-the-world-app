@@ -14,3 +14,9 @@ export const Container = styled.button<ContainerProps>`
   margin-top: 16px;
   transition: all 0.3s;
 `
+export const Title = styled.h3`
+  text-align: center;
+  color: #fafafb;
+  font-size: 28px;
+  margin: 0 0 13px;
+`
