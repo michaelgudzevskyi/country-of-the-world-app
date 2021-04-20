@@ -40,4 +40,12 @@ export default createGlobalStyle`
     width: 0px;
     height: 0px;
   }
+
+  .popup-content {
+    margin: auto;
+    background: #fff;
+    width: auto;
+    padding: 0;
+    border: none;
+ }
 `

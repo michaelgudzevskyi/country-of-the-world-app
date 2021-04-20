@@ -4,11 +4,12 @@ import { CardContainer, CardImage, CardTitle } from './styles'
 
 interface Props {
   item: CountryList
+  handlePopup: () => void
 }
 
-export const CountryCard: FC<Props> = ({ item }) => {
+export const CountryCard: FC<Props> = ({ item, handlePopup }) => {
   return (
-    <CardContainer>
+    <CardContainer onClick={handlePopup}>
       <CardImage src={item.flag} alt="Country Flag" />
       <CardTitle>{item.name}</CardTitle>
     </CardContainer>
