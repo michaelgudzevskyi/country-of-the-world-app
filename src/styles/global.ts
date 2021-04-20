@@ -33,24 +33,11 @@ export default createGlobalStyle`
   }
 
   ::-webkit-scrollbar {
-    width: 5px;
+    width: 0px;
     height: 0px;
   }
   ::-webkit-scrollbar-button {
     width: 0px;
     height: 0px;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: #8257e6;
-    border: 0px none #ffffff;
-    border-radius: 50px;
-  }
-  ::-webkit-scrollbar-track {
-    background: #eaebee;
-    border: 0px none #8257e6;
-    border-radius: 50px;
-  }
-  ::-webkit-scrollbar-corner {
-    background: transparent;
   }
 `

@@ -1,5 +1,4 @@
-import { InputHTMLAttributes, useState } from 'react'
-
+import { InputHTMLAttributes } from 'react'
 import { Container, InputErrorMessage } from './styles'
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
@@ -12,20 +11,21 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 export function Search({
   label,
   error,
+  value,
   errorMessage,
   inputName,
+  onChange,
   ...rest
 }: InputProps) {
-  const [value, setValue] = useState('')
-
   return (
     <>
       <Container isErrored={!!error}>
         <input
           name={inputName}
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={onChange}
           id="search"
+          required
           {...rest}
         />
         <label htmlFor="search" className="labelName">

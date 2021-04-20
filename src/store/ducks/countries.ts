@@ -2,7 +2,6 @@ import { Dispatch } from 'redux'
 import api from '../../services'
 
 export const Types = {
-  SET_SUCCESS: 'ui/SET_SUCCESS',
   SET_ERRORS: 'ui/SET_ERRORS',
   CLEAR_ERRORS: 'ui/CLEAR_ERRORS',
   LOADING_UI: 'ui/LOADING_UI',
@@ -11,6 +10,7 @@ export const Types = {
 
 const initialState = {
   countryList: false,
+  error: false,
 }
 
 export default function reducer(
@@ -23,7 +23,16 @@ export default function reducer(
         ...state,
         countryList: action.payload,
       }
-
+    case Types.SET_ERRORS:
+      return {
+        ...state,
+        error: action.payload,
+      }
+    case Types.CLEAR_ERRORS:
+      return {
+        ...state,
+        error: action.payload,
+      }
     default:
       return state
   }
@@ -39,13 +48,33 @@ export const Creators = {
           type: Types.SET_COUNTRY_LIST,
           payload: resp.data,
         })
-        dispatch({ type: Types.CLEAR_ERRORS })
+        dispatch({ type: Types.CLEAR_ERRORS, payload: false })
       })
       .catch((err) => {
         dispatch({
           type: Types.SET_ERRORS,
           payload: err,
         })
+      })
+  },
+  getCountryFilter: (value: string) => (dispatch: Dispatch) => {
+    dispatch({ type: Types.LOADING_UI })
+    api
+      .get(`/v2/name/${value}`)
+      .then((resp) => {
+        dispatch({
+          type: Types.SET_COUNTRY_LIST,
+          payload: resp.data,
+        })
+        dispatch({ type: Types.CLEAR_ERRORS, payload: false })
+      })
+      .catch((err) => {
+        if (err?.message === 'Request failed with status code 404') {
+          dispatch({
+            type: Types.SET_ERRORS,
+            payload: 'Country not found.',
+          })
+        }
       })
   },
 }

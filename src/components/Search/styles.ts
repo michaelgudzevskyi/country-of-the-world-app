@@ -15,6 +15,7 @@ export const Container = styled.div<ContainerProps>`
     height: 100%;
     color: var(--black);
     padding: 20px 0 8px 20px;
+    border-radius: 5px;
     border: none;
     outline: none;
 
@@ -25,6 +26,18 @@ export const Container = styled.div<ContainerProps>`
       `}
 
     &:focus + .labelName .contentName,
+    &:not([value='']) + .labelName .contentName {
+      transform: translateY(-150%);
+      font-size: 10px;
+      bottom: 9px;
+      ${(props) =>
+        props.isErrored &&
+        css`
+          color: var(--red);
+        `}
+    }
+
+    &:valid + .labelName .contentName,
     &:not([value='']) + .labelName .contentName {
       transform: translateY(-150%);
       font-size: 10px;
@@ -77,4 +90,6 @@ export const InputErrorMessage = styled.p`
   color: var(--red);
   font-size: 12px;
   padding: 2px;
+  position: absolute;
+  color: white;
 `

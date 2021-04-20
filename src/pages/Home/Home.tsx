@@ -23,9 +23,10 @@ export const Home: FC = () => {
     <Container>
       <Title>Click to see country details</Title>
       <CardsWrapper>
-        {countryList.map((country: CountryList) => (
-          <CountryCard key={country.name} item={country} />
-        ))}
+        {countryList &&
+          countryList?.map((country: CountryList) => (
+            <CountryCard key={country.name} item={country} />
+          ))}
       </CardsWrapper>
     </Container>
   )
