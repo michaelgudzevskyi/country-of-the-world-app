@@ -16,20 +16,7 @@ export default createGlobalStyle`
   :root {
     --white: #FFFFFF;
     --main: #173c5c;
-
-    --grey-200: #d6d6d6;
-    --grey-500: #707070;
-
-    
-
-    --green-mint: #A9C5BA;
-    --dark-green: #2e656a;
-
-    --blue-50: #ebf8ff;
-    --blue-400: #3172b7;
-
-    --red-200: #fddede;
-    --red: #c54040;
+    --accent: #8257e6;
   }
 
   body, input, button {
@@ -43,5 +30,27 @@ export default createGlobalStyle`
 
   button {
     cursor: pointer;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 0px;
+  }
+  ::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #8257e6;
+    border: 0px none #ffffff;
+    border-radius: 50px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #eaebee;
+    border: 0px none #8257e6;
+    border-radius: 50px;
+  }
+  ::-webkit-scrollbar-corner {
+    background: transparent;
   }
 `

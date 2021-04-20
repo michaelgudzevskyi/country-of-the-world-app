@@ -1,5 +1,12 @@
 import { FC } from 'react'
+import { HeaderContainer } from '..'
+import { Home } from '../../pages'
 
 export const HomeContainer: FC = () => {
-  return <div>Home</div>
+  return (
+    <>
+      <HeaderContainer>Header</HeaderContainer>
+      <Home />
+    </>
+  )
 }

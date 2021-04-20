@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
-export const Container = styled.section`
+export const Container = styled.main`
   max-width: 1084px;
-  margin: auto;
+  margin: 45px auto;
 `
 export const CardsWrapper = styled.div`
   display: flex;
