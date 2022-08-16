@@ -3,7 +3,6 @@ import styled from 'styled-components'
 export const CardContainer = styled.div`
   position: relative;
   display: flex;
-  justify-content: end;
   align-items: center;
   background-color: #fff;
   cursor: pointer;

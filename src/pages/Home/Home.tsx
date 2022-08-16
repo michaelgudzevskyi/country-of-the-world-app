@@ -26,7 +26,7 @@ export const Home: FC = () => {
     },
     []
   )
-
+  
   return (
     <Container>
       <Title>
@@ -41,7 +41,7 @@ export const Home: FC = () => {
           countryList?.map((country: CountryList) => (
             <CountryCard
               handlePopup={() => handlePopup(country, true)}
-              key={country.name}
+              key={country.flag}
               item={country}
             />
           ))}

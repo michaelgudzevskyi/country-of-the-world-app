@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 export interface CountryList {
-  name: string
+  name: string | { common: string }
   topLevelDomain?: string[] | null
   alpha2Code: string
   alpha3Code: string
